@@ -1,0 +1,199 @@
+@use './_partials/typography' as *;
+@use './_partials/mixin' as *;
+
+* {
+    margin: 0;
+    font-family: $font-quicksand;
+}
+
+.ask {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 1% 15%;
+    border-radius: 10px;
+    background-color: #e3afbc80;
+    border: 0.5px rgba(141, 0, 71, 0.164) solid;
+    box-shadow: 2px 2px 15px -4px rgba(0, 0, 0, 0.3);
+    transition: 0.25s ease-in-out;
+    padding: 1rem;
+
+    @include phone {
+        margin: 0;
+        width: 70%;
+    }
+
+    @include desktop {
+        width: 85%;
+        margin: 0 10%;
+    }
+
+    &__messages {
+        overflow: auto;
+        max-height: 50vh;
+    }
+
+    &__container {
+        display: flex;
+        height: 100vh;
+        flex-direction: row;
+        align-items: center;
+        background-image: url(../assets/images/background-image.png);
+        background-position: center;
+
+        @include phone {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+    }
+
+    &__info {
+        @include phone {
+            display: none;
+        }
+    }
+
+    &__instructions {
+        width: 30vw;
+        height: 100vh;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background-color: #E3AFBC;
+    }
+
+    &__logo {
+        position: absolute;
+        width: 32%;
+        top: 5%;
+        right: 12%;
+        // background-color: none;
+        transition: 0.25s ease-in;
+
+        @include phone {
+            position: static;
+            margin-bottom: 20%;
+            width: 50%;
+        }
+
+        @include desktop {
+            transition: none;
+            width: 25%;
+        }
+    }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+        color: rgb(141, 0, 71);
+        margin: 2rem 1rem 1rem;
+        border-bottom: rgba(141, 0, 71, 0.164) solid 1px;
+        padding-bottom: 1rem;
+
+        @include phone {
+            font-size: 1.3rem;
+        }
+    }
+
+    &__subtitle {
+        display: flex;
+        justify-content: center;
+        padding: 0.5rem 0;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__question {
+        background-color: #FFFFFF;
+        min-height: 1rem;
+        min-width: 1rem;
+        max-width: 50%;
+        width: fit-content;
+        height: fit-content;
+        border-style: none;
+        border-radius: 30px 2px 30px 30px;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        margin-right: 3%;
+        padding: 0.5rem 1rem;
+        outline: none;
+    }
+
+    &__question-icon {
+        width: 2.25rem;
+        margin-right: 0.8rem;
+    }
+
+    &__answer {
+        background-color: #FFFFFF;
+        min-height: 1rem;
+        min-width: 1rem;
+        padding: 0.5rem 1rem;
+        border-style: none;
+        border-radius: 2px 30px 30px 30px;
+        width: fit-content;
+        max-width: 50%;
+        height: fit-content;
+        margin-left: 3%;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        outline: none;
+    }
+
+    &__answer-icon {
+        width: 2.25rem;
+        margin-left: 0.8rem;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    &__input {
+        width: 88%;
+        margin: 10% 4% 3% 4%;
+        padding: 2%;
+        resize: none;
+        display: flex;
+        justify-content: center;
+        border-style: none;
+        // height: 1rem;
+        outline: none;
+        border-radius: 30px;
+        overflow: hidden;
+    }
+
+    &__box {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    &__button {
+        background-color: rgb(141, 0, 71);
+        margin: 1rem 0;
+        border-style: none;
+        border-radius: 50px;
+        width: 60%;
+        height: 2.5rem;
+        color: #FFFFFF;
+        transition: 0.25s ease-in-out;
+
+        &:hover {
+            color: rgb(141, 0, 71);
+            background-color: #FFFFFF;
+        }
+
+        &:active {
+            background-color: rgb(141, 0, 71);
+            color: #FFFFFF;
+        }
+    }
+}
